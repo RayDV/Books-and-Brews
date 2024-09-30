@@ -88,7 +88,7 @@ export const google = async(req, res, next) => {
       const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET);
       const { password, ...rest } = newUser._doc;
       res
-        .status(200)
+        .status(200) // Todo: Change numbers to constants
         .cookie("access_token", token, {
           httpOnly: true,
         })
